@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Simple web Development Template</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(90, 41, 41);
+        }
+
+        #first {
+            margin: 10px;
+        }
+
+        #second {
+            margin: 10px;
+        }
+
+        #butt {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" name="first" id="first" step="any" />
+
+    <select name="" id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">X</option>
+        <option value="/">/</option>
+    </select>
+
+    <input type="number" name="second" id="second" step="any" />
+    <br>
+    <br>
+    <button onclick="cal()" id="butt">CALCULATE</button>
+    <input type="text" id="res" readonly="">
+</body>
+<script>
+    function cal() {
+        var opr1 = document.getElementById("first").value;
+
+        var opr2 = document.getElementById("second").value;
+        var ope = document.getElementById("ope").value;
+        if (ope == "+") {
+            var res = parseInt(opr1) + parseInt(opr2);
+        }
+        if (ope == "-") {
+            var res = parseInt(opr1) - parseInt(opr2);
+        }
+        if (ope == "*") {
+            var res = parseInt(opr1) * parseInt(opr2);
+        }
+        if (ope == "/") {
+            var res = parseInt(opr1) / parseInt(opr2);
+        }
+        document.getElementById('res').value = res;
+
+    }
+</script>
+
+</html>
